@@ -1,0 +1,376 @@
+﻿@{
+    Layout = null;
+    var appName = "Zohacous";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - @appName</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+<body class="page-body">
+
+    <!-- NAVIGATION AS SINGLE IMAGE -->
+    <header class="nav-image-wrapper">
+        @*  <img src="~/images/Menu.png" alt="Navigation Bar" class="nav-image" /> *@
+        <header class="site-header">
+            <div class="container nav-inner">
+                <!-- Brand -->
+                <div class="nav-brand">
+                    <img src="images/Logo.svg" alt="Zohacous Logo" class="nav-logo">
+                </div>
+
+                <!-- Nav links -->
+                <nav class="nav-links">
+                    <a href="#" class="nav-link" data-i18n="navHome"></a>
+                    <a href="#" class="nav-link" data-i18n="navCourses"></a>
+                    <a href="#" class="nav-link" data-i18n="navPricing"></a>
+                    <a href="#" class="nav-link" data-i18n="navBlog"></a>
+                </nav>
+
+                <!-- Right side: language buttons + CTA -->
+                <div class="nav-right">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="he">עב</button>
+                    </div>
+
+
+                 <button id="toggleEditMode"
+                 type="button"
+                 class="btn nav-admin"
+                 data-i18n="navAdmin">
+                 </button>
+
+                    <a href="#" class="btn btn-primary nav-cta" data-i18n="navSignup"></a>
+                </div>
+            </div>
+        </header>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="he">עב</button>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© @DateTime.Now.Year @appName. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+<script>
+        const translations = {
+        en: {
+            /* NAV */
+            navHome: "Home",
+            navCourses: "Courses",
+            navPricing: "Pricing",
+            navBlog: "Blog",
+            navSignup: "Sign Up Today",
+            navAdmin: "Admin Panel",
+
+            /* HERO */
+            heroLabel: "EXPERT-LED LEARNING",
+            heroTitleLine1: "Unlock Potential",
+            heroTitleLine2: "With Proven Courses.",
+            heroSubtitle:
+                "Here you can elevate your tech career with expert-led courses. Whether you're just starting out or aiming to advance your skills, our hands-on, practical training is designed for you.",
+            heroBtnPrimary: "Start Learning Now",
+            heroBtnSecondary: "Check Out Courses",
+
+            /* COURSES SECTION */
+            coursesKicker: "Course Categories",
+            coursesTitle: "Browse Our Tech Course Categories.",
+            coursesSubtitle:
+                "Explore our curated catalog of tech courses designed to build your career, from beginner to advanced levels.",
+            coursesCta: "Discover Courses",
+
+            cat1Title: "Web Development",
+            cat1Desc: "HTML, CSS, JavaScript and modern frameworks.",
+            cat1Meta: "12+ Courses",
+
+            cat2Title: "App Development",
+            cat2Desc: "Build cross-platform mobile apps from scratch.",
+            cat2Meta: "10+ Courses",
+
+            cat3Title: "Machine Learning",
+            cat3Desc: "ML models, data pipelines & deployment.",
+            cat3Meta: "8+ Courses",
+
+            cat4Title: "Cloud Computing",
+            cat4Desc: "Master AWS, Azure & cloud-native infra.",
+            cat4Meta: "6+ Courses",
+
+            /* MENTOR SECTION */
+            mentorKicker: "Meet Your Mentor",
+            mentorTitleLine1: "Get To Know Your",
+            mentorTitleLine2: "Pathway To Mastery.",
+            mentorSubtitle:
+                "With over a decade of experience in the tech industry, your mentor has dedicated their career to empowering learners through structured, real-world teaching.",
+
+            mentorStat1Value: "20+",
+            mentorStat1Label: "Total Courses Taught",
+
+            mentorStat2Value: "4K+",
+            mentorStat2Label: "Total Happy Learners",
+
+            mentorStat3Value: "08+",
+            mentorStat3Label: "Years of Experience",
+
+            mentorBadge: "Expert Mentor in Technology",
+            mentorName: "Mrs. Sarah Johnson",
+            mentorBio:
+                "Providing hands-on, real-world training and mentorship, I aim to bridge the gap between theoretical knowledge and practical application, ensuring that every student can confidently apply their skills.",
+            mentorAwardsText:
+                "She has received prestigious honors including the \"Top Educator\" award and the \"Teaching Excellence\" award."
+        },
+
+        ru: {
+            /* NAV */
+            navHome: "Главная",
+            navCourses: "Курсы",
+            navPricing: "Цены",
+            navBlog: "Блог",
+            navAdmin: "Панель администратора",
+            navSignup: "Присоединиться",
+
+
+            /* HERO */
+            heroLabel: "ОБУЧЕНИЕ ОТ ЭКСПЕРТОВ",
+            heroTitleLine1: "Прокачай карьеру",
+            heroTitleLine2: "с нашими проверенными курсами",
+            heroSubtitle:
+                "Расти в IT с обучением от экспертов: от первых шагов до уровня профи! Наши практические курсы помогут уверенно развивать навыки.",
+            heroBtnPrimary: "Начать обучение",
+            heroBtnSecondary: "Смотреть курсы",
+
+            /* COURSES SECTION */
+            coursesKicker: "Категории курсов",
+            coursesTitle: "Открой наши направления в мире технологий.",
+            coursesSubtitle:
+                "Изучи подборку курсов по IT, которые помогут построить карьеру — от новичка до уверенного профессионала.",
+            coursesCta: "Найти курсы",
+
+            cat1Title: "Веб-разработка",
+            cat1Desc: "HTML, CSS, JavaScript и современные фреймворки.",
+            cat1Meta: "12+ курсов",
+
+            cat2Title: "Мобильная разработка",
+            cat2Desc: "Создавай кроссплатформенные приложения с нуля.",
+            cat2Meta: "10+ курсов",
+
+            cat3Title: "Машинное обучение",
+            cat3Desc: "Модели ML, пайплайны данных и продакшн.",
+            cat3Meta: "8+ курсов",
+
+            cat4Title: "Облачные технологии",
+            cat4Desc: "Освой AWS, Azure и облачную инфраструктуру.",
+            cat4Meta: "6+ курсов",
+
+            /* MENTOR SECTION */
+            mentorKicker: "Познакомьтесь с ментором",
+            mentorTitleLine1: "Познайте путь",
+            mentorTitleLine2: "к профессиональному мастерству",
+            mentorSubtitle:
+                "Более десяти лет в индустрии технологий — ваш ментор помогает студентам расти через структурированное, практико-ориентированное обучение.",
+
+            mentorStat1Value: "20+",
+            mentorStat1Label: "Проведённых курсов",
+
+            mentorStat2Value: "4K+",
+            mentorStat2Label: "Довольных учеников",
+
+            mentorStat3Value: "8+",
+            mentorStat3Label: "Лет опыта",
+
+            mentorBadge: "Эксперт-ментор в технологиях",
+            mentorName: "Миссис Сара Джонсон",
+            mentorBio:
+                "Давая практические знания и реальный опыт, я помогаю соединить теорию и практику, чтобы каждый студент уверенно применял навыки в работе.",
+            mentorAwardsText:
+                "Она удостоена престижных наград, включая звание «Top Educator» и премию «Teaching Excellence»."
+        },
+
+        he: {
+            /* NAV */
+            navHome: "בית",
+            navCourses: "קורסים",
+            navPricing: "מחירים",
+            navBlog: "בלוג",
+            navAdmin: "לוח ניהול",
+            navSignup: "הירשם היום",
+
+            /* HERO */
+            heroLabel: "למידה בהנחיית מומחים",
+            heroTitleLine1: "קדם את הקריירה שלך",
+            heroTitleLine2: "עם קורסים שמבוססים על הצלחה",
+            heroSubtitle:
+                "קפוץ קדימה בעולם ההייטק עם הדרכה מאנשי מקצוע – ממתחילים ועד מתקדמים. הקורסים המעשיים שלנו נבנו כדי לתת לך ביטחון ויכולת אמיתית בשטח.",
+            heroBtnPrimary: "התחל ללמוד עכשיו",
+            heroBtnSecondary: "צפה בקורסים",
+
+            /* COURSES SECTION */
+            coursesKicker: "קטגוריות קורסים",
+            coursesTitle: "עיין בקטגוריות הקורסים הטכנולוגיים שלנו.",
+            coursesSubtitle:
+                "גלו קטלוג קורסים טכנולוגיים שנבנו במיוחד כדי לפתח את הקריירה שלכם\nמרמת מתחילים ועד מתקדמים.",
+            coursesCta: "גלו קורסים",
+
+            cat1Title: "פיתוח אתרים",
+            cat1Desc: "HTML, CSS, JavaScript ומסגרות מודרניות.",
+            cat1Meta: "12+ קורסים",
+
+            cat2Title: "פיתוח אפליקציות",
+            cat2Desc: "בנו אפליקציות מובייל חוצות-פלטפורמות מאפס.",
+            cat2Meta: "10+ קורסים",
+
+            cat3Title: "למידת מכונה",
+            cat3Desc: "מודלי ML, תהליכי נתונים והעלאה לפרודקשן.",
+            cat3Meta: "8+ קורסים",
+
+            cat4Title: "מחשוב ענן",
+            cat4Desc: "שליטה ב-AWS, Azure ותשתיות Cloud-Native.",
+            cat4Meta: "6+ קורסים",
+
+            /* MENTOR SECTION */
+            mentorKicker: "הכירו את המנטורית שלכם",
+            mentorTitleLine1: "הכירו את הדרך שלכם",
+            mentorTitleLine2: "למצוינות מקצועית.",
+            mentorSubtitle:
+                "עם ניסיון של למעלה מעשור בתעשיית ההייטק, המנטורית שלכם מקדישה את הקריירה שלה להעצמת לומדים באמצעות הוראה מובנית ומוכוונת-פרקטיקה.",
+
+            mentorStat1Value: "20+",
+            mentorStat1Label: "קורסים שנלמדו",
+
+            mentorStat2Value: "4K+",
+            mentorStat2Label: "לומדים מרוצים",
+
+            mentorStat3Value: "08+",
+            mentorStat3Label: "שנות ניסיון",
+
+            mentorBadge: "מנטורית מומחית בטכנולוגיה",
+            mentorName: "שרה ג'ונסון",
+            mentorBio:
+                "באמצעות הדרכה מעשית וחיבור לעולם האמיתי, אני שואפת לגשר בין הידע התאורטי ליישום בשטח, כך שכל סטודנט ירגיש בטוח להשתמש ביכולות שלו ביום-יום.",
+            mentorAwardsText:
+                "היא זכתה בהוקרות יוקרתיות, בהן פרס \"Top Educator\" ופרס \"Teaching Excellence\"."
+        }
+    };
+
+    function applyTranslations(lang) {
+        const dict = translations[lang] || translations.en;
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) {
+                el.textContent = dict[key];
+            }
+        });
+    }
+
+    function setLanguage(lang) {
+        document.body.classList.remove("lang-en", "lang-ru", "lang-he");
+        document.body.classList.add("lang-" + lang);
+
+        document.documentElement.dir = (lang === "he") ? "rtl" : "ltr";
+
+        document.querySelectorAll(".lang-btn").forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+
+        applyTranslations(lang);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+     console.log("dom loaded");
+        document.querySelectorAll(".lang-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        setLanguage("en");
+    });
+
+    let editMode = false;
+
+    document.getElementById("toggleEditMode").addEventListener("click", () => {
+         console.log("toggleEditMode button clicked");
+        editMode = !editMode;
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+             const isLink = el.tagName.toLowerCase() === "a";
+            if (editMode) {
+                if (isLink)
+                {
+                  return;
+                }
+                // עט ואפשרות עריכה
+                let wrapper = document.createElement("span");
+                wrapper.classList.add("editable-wrapper");
+                el.parentNode.insertBefore(wrapper, el);
+                wrapper.appendChild(el);
+
+                let icon = document.createElement("span");
+                icon.innerHTML = "✏️";
+                icon.classList.add("edit-icon");
+                wrapper.appendChild(icon);
+
+                el.setAttribute("contenteditable", "true");
+                el.classList.add("editing");
+            } else {
+                // ביטול עריכה
+                if (el.parentNode.classList.contains("editable-wrapper")) {
+                    const parent = el.parentNode;
+                    parent.parentNode.insertBefore(el, parent);
+                    parent.remove();
+                }
+                el.removeAttribute("contenteditable");
+                el.classList.remove("editing");
+            }
+        });
+    });
+
+        document.addEventListener("blur", async (e) => {
+        if (!editMode) return;
+        if (!e.target.matches("[data-i18n]")) return;
+
+        const key = e.target.getAttribute("data-i18n");
+        const lang = document.body.classList.contains("lang-he") ? "he" :
+                     document.body.classList.contains("lang-ru") ? "ru" : "en";
+        const value = e.target.innerText.trim();
+
+        console.log("Saving", { key, lang, value });
+
+        await fetch("/api/admin/update-text", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ key, language: lang, value })
+        });
+    }, true);
+</script>
+</html>

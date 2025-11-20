@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Unlock Potential With Proven Courses";
+}
+
+<!-- HERO SECTION -->
+@* <section class="hero-single-image">
+    <img src="images/Main.png" alt="Hero Section">
+</section> *@
+
+<section class="hero hero-coded">
+    <div class="hero-bg-overlay"></div>
+
+    <div class="container hero-inner">
+        <span class="hero-label" data-i18n="heroLabel"></span>
+
+        <h1 class="hero-title">
+            <span data-i18n="heroTitleLine1"></span><br />
+            <span data-i18n="heroTitleLine2"></span>
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
+
+        <div class="hero-actions">
+            <a href="#" class="btn btn-primary" data-i18n="heroBtnPrimary"></a>
+            <a href="#" class="btn btn-outline hero-secondary-btn" data-i18n="heroBtnSecondary"></a>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero-podcast-full">
+    <!-- main wide podcast image -->
+    <img src="images/hero-podcast.png" alt="Hero Podcast Image" class="hero-podcast-img">
+
+    <!-- left floating card: Enhance Your Career -->
+    <div class="hero-card hero-card-left">
+        <img src="images/Enhance your career.png" alt="Enhance Your Career">
+    </div>
+
+    <!-- right floating card: Courses are Rated -->
+    <div class="hero-card hero-card-right">
+        <img src="images/Courses are rated.png" alt="Courses are Rated Excellent 4.9/5">
+    </div>
+</section>
+
+
+
+<!-- COURSE CATEGORIES SECTION (the big dark card) -->
+@* <section class="courses-image-section">
+    <div class="container">
+        <img src="images/Course categories.png" alt="Course Categories" class="courses-img">
+    </div>
+</section> *@
+
+
+<section class="section section-courses">
+    <div class="container courses-card">
+        <div class="courses-header">
+            <div class="courses-left">
+                <span class="section-kicker" data-i18n="coursesKicker"></span>
+                <h2 class="courses-title" data-i18n="coursesTitle"></h2>
+            </div>
+
+            <div class="courses-right">
+                <p class="courses-subtitle" data-i18n="coursesSubtitle"></p>
+                <a href="#" class="btn btn-primary courses-cta" data-i18n="coursesCta"></a>
+            </div>
+        </div>
+
+        <div class="courses-grid">
+            <!-- Card 1 -->
+            <article class="course-category">
+                <div class="category-icon">💻</div>
+                <h3 class="category-title" data-i18n="cat1Title"></h3>
+                <p class="category-desc" data-i18n="cat1Desc"></p>
+                <span class="category-meta" data-i18n="cat1Meta"></span>
+            </article>
+
+            <!-- Card 2 (active) -->
+            <article class="course-category course-category--active">
+                <div class="category-icon">📱</div>
+                <h3 class="category-title" data-i18n="cat2Title"></h3>
+                <p class="category-desc" data-i18n="cat2Desc"></p>
+                <span class="category-meta" data-i18n="cat2Meta"></span>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="course-category">
+                <div class="category-icon">🤖</div>
+                <h3 class="category-title" data-i18n="cat3Title"></h3>
+                <p class="category-desc" data-i18n="cat3Desc"></p>
+                <span class="category-meta" data-i18n="cat3Meta"></span>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="course-category">
+                <div class="category-icon">☁️</div>
+                <h3 class="category-title" data-i18n="cat4Title"></h3>
+                <p class="category-desc" data-i18n="cat4Desc"></p>
+                <span class="category-meta" data-i18n="cat4Meta"></span>
+            </article>
+        </div>
+    </div>
+</section>
+
+@* 
+
+<!-- MENTOR / ABOUT SECTION -->
+<section class="mentor-full-image">
+    <img src="~/images/instructor.png" alt="Mentor Section" />
+</section>
+
+ *@
+
+
+<section class="section section-mentor">
+    <div class="container mentor-wrapper">
+
+        <!-- TOP ROW: TEXT + STATS & PHOTO -->
+        <div class="mentor-top">
+            <!-- LEFT: TEXT + STATS -->
+            <div class="mentor-summary">
+                <span class="section-kicker" data-i18n="mentorKicker">Meet Your Mentor</span>
+
+                <h2 class="mentor-title">
+                    <span data-i18n="mentorTitleLine1">Get To Know Your</span><br />
+                    <span data-i18n="mentorTitleLine2">Pathway To Mastery.</span>
+                </h2>
+
+                <p class="mentor-subtitle" data-i18n="mentorSubtitle">
+                    With over a decade of experience in the tech industry, mentor has dedicated their
+                    career to empowering learners.
+                </p>
+
+                <div class="mentor-stats">
+                    <div class="mentor-stat">
+                        <div class="mentor-stat-value" data-i18n="mentorStat1Value">20+</div>
+                        <div class="mentor-stat-label" data-i18n="mentorStat1Label">Total Courses Taught</div>
+                    </div>
+
+                    <div class="mentor-stat">
+                        <div class="mentor-stat-value" data-i18n="mentorStat2Value">4K+</div>
+                        <div class="mentor-stat-label" data-i18n="mentorStat2Label">Total Happy Learners</div>
+                    </div>
+
+                    <div class="mentor-stat">
+                        <div class="mentor-stat-value" data-i18n="mentorStat3Value">08+</div>
+                        <div class="mentor-stat-label" data-i18n="mentorStat3Label">Years of Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: PHOTO -->
+            <div class="mentor-photo">
+                <!-- תעדכן את שם הקובץ לפי מה שיש אצלך wwwroot/images/... -->
+                <img src="~/images/instructor-main.png" alt="Instructor photo" />
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW: BIO CARD + AWARDS -->
+        <div class="mentor-bottom">
+            <!-- LEFT: BIO -->
+            <div class="mentor-bio-card">
+                <div class="mentor-badge">
+                    <span class="mentor-badge-dot"></span>
+                    <span data-i18n="mentorBadge">Expert Mentor in Technology</span>
+                </div>
+
+                <h3 class="mentor-name" data-i18n="mentorName">Mrs. Sarah Johnson</h3>
+
+                <p class="mentor-bio" data-i18n="mentorBio">
+                    Providing hands-on, real-world training and mentorship, I aim to bridge gap
+                    between theoretical knowledge &amp; practical application, ensuring that every
+                    student can confidently apply their skills.
+                </p>
+            </div>
+
+            <!-- RIGHT: AWARDS -->
+            <div class="mentor-awards">
+                <div class="mentor-awards-icons">
+                    <div class="award-icon"><span>🏆</span></div>
+                    <div class="award-icon"><span>🏆</span></div>
+                    <div class="award-icon"><span>🏆</span></div>
+                </div>
+
+                <p class="mentor-awards-text" data-i18n="mentorAwardsText">
+                    She has received prestigious honors "Top Educator" award and
+                    the "Teaching Excellence" award.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
