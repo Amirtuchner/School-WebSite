@@ -9,7 +9,6 @@ builder.Services.AddRazorPages();
 
 
 builder.Services.AddControllersWithViews();
-var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
@@ -22,6 +21,10 @@ else
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseInMemoryDatabase("SchoolDbDemo"));
 }
+
+
+var app = builder.Build();
+
 
 app.UseHttpsRedirection();
 
